@@ -113,6 +113,11 @@ div#img_base {
     bottom:0;
     right: 0;
 }
+#soundButton{
+    position: absolute;
+    bottom:0;
+    left: 0;
+}
 #messageView{
     width:400px;
     height:40px;
@@ -321,13 +326,15 @@ function sleep() {
     document.getElementById("messageView").innerHTML="ミッション：眠いドライバーを助けろ！";
 	mission = 1;
 }
-
-    var fire = function(){
-        console.log("FIRE");
+function sound() {
 		//一度ユーザタッチで再生した音しかJSから再生できない？
 	  	audioBad.play();
 		audioGood.play();
 	    audioGreat.play();
+}
+
+    var fire = function(){
+        console.log("FIRE");
 
 	    audioFire.play();
 		if (mission == 1){
@@ -355,12 +362,13 @@ function sleep() {
 <div id="judge"></div>
 
 <div id="sleepButton"><a href="#" onclick="sleep()">sleep</a></div>
+<div id="soundButton"><a href="#" onclick="sound()">sound</a></div>
 <div id="fireButton"><a href="#" class="button" onclick="fire()"><span class="text">FIRE</span><span class="highlight"></span></a></div>
 <div id="scoreView">0</div>
 
-<audio id="greatsound" src="correct3.mp3"></audio>
+<audio id="greatsound" src="button15.mp3"></audio>
 <audio id="goodsound" src="decision22.mp3"></audio>
-<audio id="badsound" src="incorrect1.mp3"></audio>
+<audio id="badsound" src="button56.mp3"></audio>
 <audio id="firesound" src="se_maoudamashii_explosion06.mp3"></audio>
 
 </body>
