@@ -223,6 +223,7 @@ background-image: linear-gradient(rgba(250, 250, 255, 1) 0%, rgba(250, 250, 255,
 		var audioGreat;
 		var audioGood;
 		var audioBad;
+		var misssion = 0;
         window.onload = function () {
           document.getElementById("WSRoomID").innerHTML = roomID;
           var msg = {"roomID":roomID, "data":"NOT REQUIRED"};
@@ -316,7 +317,7 @@ function judge(x,y) {
 
 function sleep() {
     document.getElementById("messageView").innerHTML="ミッション：眠いドライバーを助けろ！";
-
+	mission = 1;
 }
 
     var fire = function(){
@@ -325,7 +326,8 @@ function sleep() {
 	  	audioBad.play();
 		audioGood.play();
 	    audioGreat.play();
-        if (document.getElementById("messageView").innerHTML == "ミッション：眠いドライバーを助けろ！"){
+		if (mission == 1){
+            location.href = "say://sleepy";
             document.getElementById("messageView").innerHTML="";
             score +=1;
             document.getElementById("scoreView").innerHTML=score;
