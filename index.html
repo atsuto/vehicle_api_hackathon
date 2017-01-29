@@ -296,6 +296,11 @@ var accelSub = navigator.vehicle.acceleration.subscribe(function(obj) {
           }
         });
 
+// 酔った
+var wow = function(){
+        location.href = "say://help";
+    }
+
 var memeSubId = navigator.vehicle.meme.subscribe(function(meme) {
           document.getElementById("MemeAttentiveness").innerHTML    = meme.attentiveness;
           document.getElementById("MemeAwakeness").innerHTML        = meme.awakeness;
